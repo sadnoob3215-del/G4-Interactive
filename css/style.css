@@ -148,7 +148,7 @@ button {
     width: 0;
     height: 2px;
 
-    background: #9292ff;
+    background: #3b82f6;
 
     transition:
         width 0.25s ease;
@@ -241,7 +241,7 @@ section {
 
     margin-bottom: 17px;
 
-    color: #9292ff;
+    color: #3b82f6;
 
     font-size: 12px;
     font-weight: 800;
@@ -576,7 +576,7 @@ section {
     background:
         linear-gradient(
             to bottom,
-            #9292ff,
+            #3b82f6,
             transparent
         );
 }
@@ -844,7 +844,7 @@ section {
         translateY(-5px);
 
     border-color:
-        #9292ff;
+        #3b82f6;
 }
 
 
