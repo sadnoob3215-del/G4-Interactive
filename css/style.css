@@ -92,7 +92,8 @@ button {
 .logo img {
 
     width: 170px;
-    height: auto;
+    height: auto
+    ;
 
     display: block;
 
@@ -1137,8 +1138,8 @@ footer {
 
     .logo img {
 
-        width: 31px;
-        height: 31px;
+        width: 145px;
+        height: auto;
     }
 
 
