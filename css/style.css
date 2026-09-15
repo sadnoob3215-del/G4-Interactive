@@ -92,8 +92,7 @@ button {
 .logo img {
 
     width: 170px;
-    height: auto
-    ;
+    height: auto;
 
     display: block;
 
@@ -374,7 +373,7 @@ section {
     top: -360px;
     right: -230px;
 
-    background: #6860ff;
+    background: #2563eb;
 
     opacity: 0.15;
 }
@@ -388,7 +387,7 @@ section {
     left: -300px;
     bottom: -350px;
 
-    background: #554dff;
+    background: #1d4ed8;
 
     opacity: 0.08;
 }
@@ -406,14 +405,14 @@ section {
         9px 15px;
 
     border:
-        1px solid rgba(146, 146, 255, 0.3);
+        1px solid rgba(59, 130, 246, 0.3);
 
     border-radius: 999px;
 
     background:
-        rgba(146, 146, 255, 0.07);
+        rgba(59, 130, 246, 0.07);
 
-    color: #aaaaff;
+    color: #60a5fa;
 
     font-size: 12px;
     font-weight: 700;
@@ -446,11 +445,13 @@ section {
 
 
 .title-purple {
-    color: #9696ff;
+    color: #60a5fa;
 }
 
 
-/* HERO DESCRIPTION */
+/* =========================================
+   HERO DESCRIPTION
+========================================= */
 
 .hero-description {
 
@@ -518,7 +519,7 @@ section {
 
 
 .button-primary:hover {
-    background: #ddddff;
+    background: #dbeafe;
 }
 
 
@@ -537,10 +538,10 @@ section {
 .button-secondary:hover {
 
     border-color:
-        rgba(146, 146, 255, 0.45);
+        rgba(59, 130, 246, 0.45);
 
     background:
-        rgba(146, 146, 255, 0.08);
+        rgba(59, 130, 246, 0.08);
 }
 
 
@@ -664,7 +665,7 @@ section {
         translateY(-6px);
 
     border-color:
-        rgba(146, 146, 255, 0.3);
+        rgba(59, 130, 246, 0.3);
 }
 
 
@@ -754,7 +755,7 @@ section {
         translateY(-7px);
 
     border-color:
-        rgba(146, 146, 255, 0.3);
+        rgba(59, 130, 246, 0.3);
 }
 
 
@@ -915,7 +916,7 @@ section {
 
     display: inline-block;
 
-    color: #a9a9ff;
+    color: #60a5fa;
 
     font-size: 21px;
     font-weight: 600;
@@ -1346,7 +1347,8 @@ footer {
 
         font-size: 53px;
 
-        letter-spacing: -4px;
+        letter-spacing:
+            -4px;
     }
 
 
@@ -1354,108 +1356,185 @@ footer {
         font-size: 14px;
     }
 }
+
+
 /* ================================
-   Representative Message
+   REPRESENTATIVE MESSAGE
 ================================ */
 
 .representative {
+
     padding: 150px 0;
+
     background: #0a0b0f;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.06);
 }
 
+
 .representative-layout {
+
     display: grid;
-    grid-template-columns: 0.8fr 1.4fr;
+
+    grid-template-columns:
+        0.8fr 1.4fr;
+
     gap: 100px;
+
     margin-top: 70px;
 }
 
+
 .representative-heading {
+
     display: flex;
     flex-direction: column;
+
     justify-content: flex-start;
+
     padding-top: 10px;
 }
 
+
 .representative-heading span {
+
     font-size: 13px;
-    letter-spacing: 0.2em;
+
+    letter-spacing:
+        0.2em;
+
     color: #777b86;
+
     margin-bottom: 12px;
 }
 
+
 .representative-heading strong {
+
     font-size: 22px;
-    letter-spacing: 0.08em;
+
+    letter-spacing:
+        0.08em;
+
     color: #ffffff;
 }
 
+
 .representative-content {
+
     max-width: 720px;
 }
 
+
 .representative-content h2 {
-    margin: 0 0 40px;
-    font-size: clamp(32px, 4vw, 56px);
+
+    margin:
+        0 0 40px;
+
+    font-size:
+        clamp(32px, 4vw, 56px);
+
     line-height: 1.2;
-    letter-spacing: -0.04em;
+
+    letter-spacing:
+        -0.04em;
+
     color: #ffffff;
 }
 
+
 .representative-content p {
-    margin: 0 0 22px;
+
+    margin:
+        0 0 22px;
+
     color: #a7aab3;
+
     font-size: 16px;
+
     line-height: 1.9;
 }
 
+
 .representative-signature {
+
     display: flex;
     flex-direction: column;
+
     margin-top: 55px;
+
     padding-top: 25px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.08);
 }
 
+
 .representative-signature span {
+
     color: #ffffff;
+
     font-size: 15px;
+
     font-weight: 600;
 }
 
+
 .representative-signature strong {
+
     margin-top: 5px;
+
     color: #777b86;
+
     font-size: 12px;
-    letter-spacing: 0.12em;
+
+    letter-spacing:
+        0.12em;
+
     text-transform: uppercase;
 }
 
 
-/* Mobile */
+/* MOBILE */
+
 @media (max-width: 768px) {
 
     .representative {
-        padding: 100px 0;
+
+        padding:
+            100px 5vw;
     }
 
+
     .representative-layout {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+            1fr;
+
         gap: 45px;
+
         margin-top: 50px;
     }
+
 
     .representative-heading {
         padding-top: 0;
     }
 
+
     .representative-content h2 {
-        margin-bottom: 30px;
+
+        margin-bottom:
+            30px;
     }
 
+
     .representative-content p {
+
         font-size: 15px;
-        line-height: 1.8;
+
+        line-height:
+            1.8;
     }
 }
