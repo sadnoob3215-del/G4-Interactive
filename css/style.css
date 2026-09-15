@@ -1353,3 +1353,108 @@ footer {
         font-size: 14px;
     }
 }
+/* ================================
+   Representative Message
+================================ */
+
+.representative {
+    padding: 150px 0;
+    background: #0a0b0f;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.representative-layout {
+    display: grid;
+    grid-template-columns: 0.8fr 1.4fr;
+    gap: 100px;
+    margin-top: 70px;
+}
+
+.representative-heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 10px;
+}
+
+.representative-heading span {
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    color: #777b86;
+    margin-bottom: 12px;
+}
+
+.representative-heading strong {
+    font-size: 22px;
+    letter-spacing: 0.08em;
+    color: #ffffff;
+}
+
+.representative-content {
+    max-width: 720px;
+}
+
+.representative-content h2 {
+    margin: 0 0 40px;
+    font-size: clamp(32px, 4vw, 56px);
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+    color: #ffffff;
+}
+
+.representative-content p {
+    margin: 0 0 22px;
+    color: #a7aab3;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.representative-signature {
+    display: flex;
+    flex-direction: column;
+    margin-top: 55px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.representative-signature span {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.representative-signature strong {
+    margin-top: 5px;
+    color: #777b86;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .representative {
+        padding: 100px 0;
+    }
+
+    .representative-layout {
+        grid-template-columns: 1fr;
+        gap: 45px;
+        margin-top: 50px;
+    }
+
+    .representative-heading {
+        padding-top: 0;
+    }
+
+    .representative-content h2 {
+        margin-bottom: 30px;
+    }
+
+    .representative-content p {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+}
