@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#08090c"
+    >
+
+    <title>C-Level | G4 Interactive</title>
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="../assets/logo/G4logo.svg"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+</head>
+
+
+<body class="clevel-page">
+
+
+    <!-- BACKGROUND -->
+
+    <div class="clevel-background">
+
+        <div class="clevel-glow"></div>
+
+    </div>
+
+
+    <!-- ACCESS SCREEN -->
+
+    <main
+        class="clevel-container"
+        id="accessScreen"
+    >
+
+        <a
+            href="../index.html"
+            class="clevel-back"
+        >
+            ← G4 Interactive
+        </a>
+
+
+        <section class="access-card">
+
+            <div class="access-brand">
+                G4 INTERACTIVE
+            </div>
+
+
+            <div class="access-label">
+                C-LEVEL AREA
+            </div>
+
+
+            <h1>
+                Restricted Access
+            </h1>
+
+
+            <p class="access-description">
+
+                이 영역은 G4 Interactive C-Level
+                구성원만 접근할 수 있습니다.
+
+            </p>
+
+
+            <form id="accessForm">
+
+                <label for="password">
+                    ACCESS PASSWORD
+                </label>
+
+
+                <div class="password-wrapper">
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter password"
+                        autocomplete="off"
+                        required
+                    >
+
+
+                    <button
+                        type="button"
+                        id="togglePassword"
+                        aria-label="비밀번호 표시"
+                    >
+                        SHOW
+                    </button>
+
+                </div>
+
+
+                <p
+                    class="access-error"
+                    id="accessError"
+                >
+                    접근 권한이 없습니다.
+                </p>
+
+
+                <button
+                    type="submit"
+                    class="access-button"
+                >
+                    AUTHENTICATE
+                </button>
+
+            </form>
+
+
+            <div class="access-status">
+
+                <span class="status-dot"></span>
+
+                SYSTEM ONLINE
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- C-LEVEL INTERNAL PAGE -->
+
+    <main
+        class="internal-container hidden"
+        id="internalScreen"
+    >
+
+        <header class="internal-header">
+
+            <div>
+
+                <div class="internal-label">
+                    G4 INTERACTIVE
+                </div>
+
+                <h1>
+                    C-Level
+                </h1>
+
+            </div>
+
+
+            <button
+                class="logout-button"
+                id="logoutButton"
+            >
+                LOG OUT
+            </button>
+
+        </header>
+
+
+        <section class="internal-welcome">
+
+            <span>
+                AUTHENTICATED
+            </span>
+
+            <h2>
+                C-Level Internal Area
+            </h2>
+
+            <p>
+                G4 Interactive의 C-Level 전용 영역입니다.
+            </p>
+
+        </section>
+
+
+        <!-- ORGANIZATION -->
+
+        <section class="internal-section">
+
+            <div class="internal-section-label">
+                EXECUTIVE MANAGEMENT
+            </div>
+
+
+            <div class="executive-grid">
+
+
+                <article class="executive-card">
+
+                    <span class="executive-role">
+                        REPRESENTATIVE
+                    </span>
+
+                    <h3>
+                        대표
+                    </h3>
+
+                    <p>
+                        G4 Interactive Representative
+                    </p>
+
+                </article>
+
+
+                <article class="executive-card">
+
+                    <span class="executive-role">
+                        CEO
+                    </span>
+
+                    <h3>
+                        Chief Executive Officer
+                    </h3>
+
+                    <p>
+                        최고경영책임자
+                    </p>
+
+                </article>
+
+
+                <article class="executive-card">
+
+                    <span class="executive-role">
+                        COO
+                    </span>
+
+                    <h3>
+                        Chief Operating Officer
+                    </h3>
+
+                    <p>
+                        최고운영책임자
+                    </p>
+
+                </article>
+
+
+                <article class="executive-card">
+
+                    <span class="executive-role">
+                        CTO
+                    </span>
+
+                    <h3>
+                        Chief Technology Officer
+                    </h3>
+
+                    <p>
+                        최고기술책임자
+                    </p>
+
+                </article>
+
+
+                <article class="executive-card">
+
+                    <span class="executive-role">
+                        CPO
+                    </span>
+
+                    <h3>
+                        Chief Product Officer
+                    </h3>
+
+                    <p>
+                        최고제품책임자
+                    </p>
+
+                </article>
+
+
+                <article class="executive-card">
+
+                    <span class="executive-role">
+                        CSO
+                    </span>
+
+                    <h3>
+                        Chief Security Officer
+                    </h3>
+
+                    <p>
+                        최고보안책임자
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- DEPARTMENTS -->
+
+        <section class="internal-section">
+
+            <div class="internal-section-label">
+                DEPARTMENTS
+            </div>
+
+
+            <div class="department-list">
+
+                <div class="department">
+                    <span>01</span>
+                    Development
+                </div>
+
+
+                <div class="department">
+                    <span>02</span>
+                    Security
+                </div>
+
+
+                <div class="department">
+                    <span>03</span>
+                    Management
+                </div>
+
+
+                <div class="department">
+                    <span>04</span>
+                    Design
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer class="internal-footer">
+
+            G4 INTERACTIVE · C-LEVEL INTERNAL AREA
+
+        </footer>
+
+    </main>
+
+
+    <script src="../js/main.js"></script>
+
+</body>
+
+</html>
