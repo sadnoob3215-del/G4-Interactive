@@ -1,0 +1,972 @@
+/* ==================================================
+   G4 INTERACTIVE
+   C-LEVEL
+================================================== */
+
+
+/* =========================
+   PAGE
+========================= */
+
+.clevel-page {
+    min-height: 100vh;
+
+    background: #08090c;
+
+    color: #f0f1f3;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.clevel-background {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+.clevel-glow {
+    position: absolute;
+
+    top: 0;
+    right: -180px;
+
+    width: 600px;
+    height: 600px;
+
+    border-radius: 50%;
+
+    background: rgba(59, 130, 246, 0.07);
+
+    filter: blur(120px);
+}
+
+
+/* =========================
+   ACCESS
+========================= */
+
+.clevel-container {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1000px, calc(100% - 40px));
+
+    margin: 0 auto;
+
+    padding: 110px 0 80px;
+}
+
+.clevel-back {
+    display: inline-block;
+
+    margin-bottom: 35px;
+
+    color: #8d9098;
+
+    font-size: 13px;
+
+    transition: color 0.2s ease;
+}
+
+.clevel-back:hover {
+    color: #60a5fa;
+}
+
+
+/* =========================
+   ACCESS CARD
+========================= */
+
+.access-card {
+    width: min(520px, 100%);
+
+    margin: 70px auto 0;
+
+    padding: 45px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.access-brand {
+    margin-bottom: 8px;
+
+    color: #60a5fa;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+.access-label {
+    margin-bottom: 25px;
+
+    color: #686b73;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.access-card h1 {
+    margin-bottom: 15px;
+
+    font-size: 36px;
+
+    line-height: 1.2;
+
+    letter-spacing: -1px;
+}
+
+.access-description {
+    margin-bottom: 35px;
+
+    color: #8d9098;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   PASSWORD
+========================= */
+
+.access-card label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #8d9098;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.password-wrapper {
+    display: flex;
+
+    width: 100%;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.password-wrapper:focus-within {
+    border-color: rgba(96, 165, 250, 0.5);
+}
+
+.password-wrapper input {
+    width: 100%;
+
+    min-width: 0;
+
+    padding: 15px;
+
+    border: 0;
+
+    outline: 0;
+
+    background: transparent;
+
+    color: #f0f1f3;
+
+    font-size: 14px;
+}
+
+.password-wrapper input::placeholder {
+    color: #555861;
+}
+
+.password-wrapper button {
+    flex-shrink: 0;
+
+    padding: 0 16px;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #60a5fa;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+.access-error {
+    height: 0;
+
+    margin: 0;
+
+    overflow: hidden;
+
+    color: #f87171;
+
+    font-size: 12px;
+
+    opacity: 0;
+
+    transition:
+        height 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.access-error.show {
+    height: 30px;
+
+    padding-top: 8px;
+
+    opacity: 1;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.access-button {
+    width: 100%;
+
+    height: 48px;
+
+    margin-top: 18px;
+
+    border: 0;
+
+    background: #3b82f6;
+
+    color: #fff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+.access-button:hover {
+    background: #2563eb;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.access-status {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 25px;
+
+    color: #555861;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #4ade80;
+
+    box-shadow:
+        0 0 8px rgba(74, 222, 128, 0.4);
+}
+
+
+/* ==================================================
+   INTERNAL
+================================================== */
+
+.internal-container {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1180px, calc(100% - 50px));
+
+    margin: 0 auto;
+
+    padding: 90px 0 70px;
+}
+
+
+/* =========================
+   INTERNAL HEADER
+========================= */
+
+.internal-header {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    padding-bottom: 30px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.internal-label {
+    margin-bottom: 8px;
+
+    color: #60a5fa;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+.internal-header h1 {
+    margin: 0;
+
+    font-size: 48px;
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+}
+
+.internal-subtitle {
+    margin-top: 12px;
+
+    color: #686b73;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   LOGOUT
+========================= */
+
+.logout-button {
+    padding: 10px 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    background: transparent;
+
+    color: #8d9098;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.logout-button:hover {
+    border-color: rgba(96, 165, 250, 0.4);
+
+    color: #60a5fa;
+}
+
+
+/* =========================
+   WELCOME
+========================= */
+
+.internal-welcome {
+    padding: 50px 0 20px;
+}
+
+.authenticated-status {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 15px;
+
+    color: #4ade80;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.internal-welcome h2 {
+    margin-bottom: 10px;
+
+    font-size: 28px;
+
+    letter-spacing: -1px;
+}
+
+.internal-welcome p {
+    color: #777a82;
+
+    font-size: 14px;
+}
+
+
+/* ==================================================
+   ORGANIZATION SECTION
+================================================== */
+
+.organization-section {
+    margin-top: 70px;
+}
+
+
+/* =========================
+   SECTION HEADING
+========================= */
+
+.organization-heading {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.organization-heading-left {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 16px;
+}
+
+.organization-number {
+    padding-top: 3px;
+
+    color: #60a5fa;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.organization-label {
+    margin-bottom: 4px;
+
+    color: #686b73;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.organization-heading h2 {
+    margin: 0;
+
+    font-size: 25px;
+
+    line-height: 1.2;
+}
+
+.organization-count {
+    color: #555861;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* ==================================================
+   EXECUTIVE TEAM
+================================================== */
+
+.executive-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 14px;
+}
+
+.executive-card {
+    position: relative;
+
+    min-height: 230px;
+
+    padding: 25px;
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    background: rgba(255, 255, 255, 0.025);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.executive-card:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(96, 165, 250, 0.3);
+
+    background: rgba(96, 165, 250, 0.025);
+}
+
+.executive-primary {
+    border-color: rgba(96, 165, 250, 0.25);
+}
+
+.executive-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.executive-role {
+    color: #60a5fa;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.member-status {
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.member-status.assigned {
+    color: #4ade80;
+}
+
+.executive-card h3 {
+    margin-top: 30px;
+
+    font-size: 21px;
+
+    line-height: 1.3;
+}
+
+.executive-title {
+    margin-top: 7px;
+
+    color: #777a82;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+.member-line {
+    width: 100%;
+
+    height: 1px;
+
+    margin: 25px 0 15px;
+
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.member-label {
+    color: #555861;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.member-value {
+    margin-top: 5px;
+
+    color: #b7bac1;
+
+    font-size: 12px;
+}
+
+
+/* ==================================================
+   DEPARTMENT MANAGER
+================================================== */
+
+.manager-list {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.manager-row {
+    display: grid;
+
+    grid-template-columns: 60px 1fr auto;
+
+    align-items: center;
+
+    gap: 20px;
+
+    min-height: 82px;
+
+    padding: 15px 20px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+    transition: background 0.2s ease;
+}
+
+.manager-row:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.manager-number {
+    color: #60a5fa;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.manager-info h3 {
+    margin-bottom: 3px;
+
+    font-size: 16px;
+
+    font-weight: 600;
+}
+
+.manager-info p {
+    color: #686b73;
+
+    font-size: 11px;
+}
+
+.manager-status {
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.manager-status.assigned {
+    color: #4ade80;
+}
+
+.manager-status.vacant-status {
+    color: #f59e0b;
+}
+
+.manager-row.vacant {
+    background: rgba(245, 158, 11, 0.025);
+}
+
+
+/* ==================================================
+   SPECIAL
+================================================== */
+
+.special-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 14px;
+}
+
+.special-card {
+    padding: 30px;
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.special-role {
+    color: #60a5fa;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.special-card h3 {
+    margin-top: 20px;
+
+    font-size: 21px;
+}
+
+.special-card p {
+    margin-top: 5px;
+
+    color: #777a82;
+
+    font-size: 12px;
+}
+
+.special-status {
+    margin-top: 25px;
+
+    color: #4ade80;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+.internal-footer {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: 90px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+    color: #555861;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+.internal-footer span {
+    color: #3f4249;
+}
+
+
+/* =========================
+   HIDDEN
+========================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 900px) {
+
+    .executive-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 700px) {
+
+    .clevel-container {
+        width: calc(100% - 30px);
+
+        padding-top: 80px;
+    }
+
+
+    .access-card {
+        margin-top: 40px;
+
+        padding: 30px 25px;
+    }
+
+
+    .access-card h1 {
+        font-size: 30px;
+    }
+
+
+    .internal-container {
+        width: calc(100% - 30px);
+
+        padding-top: 60px;
+    }
+
+
+    .internal-header {
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+
+    .internal-header h1 {
+        font-size: 38px;
+    }
+
+
+    .internal-subtitle {
+        max-width: 260px;
+    }
+
+
+    .executive-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .executive-card {
+        min-height: 210px;
+    }
+
+
+    .manager-row {
+        grid-template-columns: 40px 1fr;
+
+        gap: 12px;
+
+        padding: 15px;
+    }
+
+
+    .manager-status {
+        grid-column: 2;
+    }
+
+
+    .special-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .organization-heading {
+        align-items: flex-start;
+    }
+
+
+    .organization-count {
+        display: none;
+    }
+
+
+    .internal-footer {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 8px;
+    }
+
+}
+
+
+/* ==================================================
+   SMALL MOBILE
+================================================== */
+
+@media (max-width: 480px) {
+
+    .access-card {
+        padding: 25px 20px;
+    }
+
+
+    .internal-header {
+        flex-direction: column;
+    }
+
+
+    .logout-button {
+        align-self: flex-start;
+    }
+
+
+    .internal-welcome h2 {
+        font-size: 24px;
+    }
+
+
+    .organization-heading h2 {
+        font-size: 22px;
+    }
+
+
+    .executive-card {
+        padding: 22px;
+    }
+
+}
