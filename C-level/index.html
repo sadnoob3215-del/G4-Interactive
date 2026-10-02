@@ -2,6 +2,7 @@
 <html lang="ko">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -26,19 +27,33 @@
         rel="stylesheet"
         href="../css/style.css"
     >
+
+    <link
+        rel="stylesheet"
+        href="../css/clevel.css"
+    >
+
 </head>
 
 
 <body class="clevel-page">
 
-    <!-- BACKGROUND -->
+
+    <!-- =========================================
+         BACKGROUND
+    ========================================== -->
 
     <div class="clevel-background">
+
         <div class="clevel-glow"></div>
+
     </div>
 
 
-    <!-- ACCESS SCREEN -->
+
+    <!-- =========================================
+         ACCESS SCREEN
+    ========================================== -->
 
     <main
         class="clevel-container"
@@ -55,31 +70,41 @@
 
         <section class="access-card">
 
+
             <div class="access-brand">
                 G4 INTERACTIVE
             </div>
+
 
             <div class="access-label">
                 C-LEVEL INTERNAL
             </div>
 
+
             <h1>
                 Restricted Access
             </h1>
 
+
             <p class="access-description">
-                G4 Interactive의 내부 편제 및 운영 정보를 확인하려면
-                인증이 필요합니다.
+
+                G4 Interactive의 내부 편제 및 운영 정보를
+                확인하려면 인증이 필요합니다.
+
             </p>
 
 
+
             <form id="accessForm">
+
 
                 <label for="password">
                     ACCESS PASSWORD
                 </label>
 
+
                 <div class="password-wrapper">
+
 
                     <input
                         type="password"
@@ -89,6 +114,7 @@
                         required
                     >
 
+
                     <button
                         type="button"
                         id="togglePassword"
@@ -97,7 +123,9 @@
                         SHOW
                     </button>
 
+
                 </div>
+
 
 
                 <p
@@ -108,6 +136,7 @@
                 </p>
 
 
+
                 <button
                     type="submit"
                     class="access-button"
@@ -115,43 +144,60 @@
                     AUTHENTICATE
                 </button>
 
+
             </form>
 
 
+
             <div class="access-status">
+
                 <span class="status-dot"></span>
+
                 SYSTEM ONLINE
+
             </div>
 
+
         </section>
+
 
     </main>
 
 
-    <!-- INTERNAL C-LEVEL -->
+
+    <!-- =========================================
+         C-LEVEL INTERNAL SCREEN
+    ========================================== -->
 
     <main
         class="internal-container hidden"
         id="internalScreen"
     >
 
+
         <!-- HEADER -->
 
         <header class="internal-header">
 
+
             <div>
+
                 <div class="internal-label">
                     G4 INTERACTIVE
                 </div>
+
 
                 <h1>
                     C-Level
                 </h1>
 
+
                 <p class="internal-subtitle">
                     Executive Organization & Internal Structure
                 </p>
+
             </div>
+
 
 
             <button
@@ -161,57 +207,82 @@
                 LOG OUT
             </button>
 
+
         </header>
 
 
-        <!-- STATUS -->
+
+        <!-- STATUS / INTRO -->
 
         <section class="internal-welcome">
 
+
             <div class="authenticated-status">
+
                 <span class="status-dot"></span>
+
                 AUTHENTICATED
+
             </div>
+
 
             <h2>
                 G4 Interactive 편제
             </h2>
 
+
             <p>
-                G4 Interactive의 최고운영진, 부서장 및 특수 직책을
-                관리하는 내부 편제입니다.
+                G4 Interactive의 최고운영진, 부서장 및
+                특수 직책을 관리하는 내부 편제입니다.
             </p>
+
 
         </section>
 
 
-        <!-- EXECUTIVE TEAM -->
+
+        <!-- =====================================
+             01. EXECUTIVE TEAM
+        ====================================== -->
 
         <section class="organization-section">
 
+
             <div class="organization-heading">
 
-                <div>
+
+                <div class="organization-heading-left">
+
+
                     <span class="organization-number">
                         01
                     </span>
 
+
                     <div>
+
                         <div class="organization-label">
                             EXECUTIVE TEAM
                         </div>
 
+
                         <h2>
                             최고운영진
                         </h2>
+
                     </div>
+
+
                 </div>
+
 
                 <span class="organization-count">
                     06 POSITIONS
                 </span>
 
+
             </div>
+
 
 
             <div class="executive-grid">
@@ -219,7 +290,9 @@
 
                 <!-- CEO -->
 
-                <article class="executive-card executive-primary">
+                <article
+                    class="executive-card executive-primary"
+                >
 
                     <div class="executive-top">
 
@@ -233,25 +306,31 @@
 
                     </div>
 
+
                     <h3>
                         대표
                     </h3>
+
 
                     <p class="executive-title">
                         Chief Executive Officer
                     </p>
 
+
                     <div class="member-line"></div>
+
 
                     <p class="member-label">
                         MEMBER
                     </p>
+
 
                     <p class="member-value">
                         배정됨
                     </p>
 
                 </article>
+
 
 
                 <!-- COO -->
@@ -270,25 +349,31 @@
 
                     </div>
 
+
                     <h3>
                         최고운영책임자
                     </h3>
+
 
                     <p class="executive-title">
                         Chief Operating Officer
                     </p>
 
+
                     <div class="member-line"></div>
+
 
                     <p class="member-label">
                         MEMBER
                     </p>
+
 
                     <p class="member-value">
                         배정됨
                     </p>
 
                 </article>
+
 
 
                 <!-- CTO -->
@@ -307,25 +392,31 @@
 
                     </div>
 
+
                     <h3>
                         최고기술책임자
                     </h3>
+
 
                     <p class="executive-title">
                         Chief Technology Officer
                     </p>
 
+
                     <div class="member-line"></div>
+
 
                     <p class="member-label">
                         MEMBER
                     </p>
+
 
                     <p class="member-value">
                         배정됨
                     </p>
 
                 </article>
+
 
 
                 <!-- CSO -->
@@ -344,25 +435,31 @@
 
                     </div>
 
+
                     <h3>
                         최고보안책임자
                     </h3>
+
 
                     <p class="executive-title">
                         Chief Security Officer
                     </p>
 
+
                     <div class="member-line"></div>
+
 
                     <p class="member-label">
                         MEMBER
                     </p>
+
 
                     <p class="member-value">
                         배정됨
                     </p>
 
                 </article>
+
 
 
                 <!-- CPO -->
@@ -381,25 +478,31 @@
 
                     </div>
 
+
                     <h3>
                         최고기획책임자
                     </h3>
+
 
                     <p class="executive-title">
                         Chief Planning Officer
                     </p>
 
+
                     <div class="member-line"></div>
+
 
                     <p class="member-label">
                         MEMBER
                     </p>
+
 
                     <p class="member-value">
                         배정됨
                     </p>
 
                 </article>
+
 
 
                 <!-- CFO -->
@@ -418,19 +521,24 @@
 
                     </div>
 
+
                     <h3>
                         최고재무책임자
                     </h3>
+
 
                     <p class="executive-title">
                         Chief Financial Officer
                     </p>
 
+
                     <div class="member-line"></div>
+
 
                     <p class="member-label">
                         MEMBER
                     </p>
+
 
                     <p class="member-value">
                         배정됨
@@ -438,48 +546,70 @@
 
                 </article>
 
+
             </div>
+
 
         </section>
 
 
-        <!-- DEPARTMENT MANAGERS -->
+
+        <!-- =====================================
+             02. DEPARTMENT MANAGER
+        ====================================== -->
 
         <section class="organization-section">
 
+
             <div class="organization-heading">
 
-                <div>
+
+                <div class="organization-heading-left">
+
+
                     <span class="organization-number">
                         02
                     </span>
 
+
                     <div>
+
                         <div class="organization-label">
                             DEPARTMENT MANAGER
                         </div>
 
+
                         <h2>
                             부서장
                         </h2>
+
                     </div>
+
+
                 </div>
+
 
                 <span class="organization-count">
                     05 POSITIONS
                 </span>
 
+
             </div>
+
 
 
             <div class="manager-list">
 
 
+                <!-- SERVER -->
+
                 <article class="manager-row">
+
 
                     <div class="manager-number">
                         01
                     </div>
+
 
                     <div class="manager-info">
 
@@ -493,18 +623,25 @@
 
                     </div>
 
+
                     <div class="manager-status assigned">
                         ASSIGNED
                     </div>
 
+
                 </article>
 
 
+
+                <!-- OPERATIONS -->
+
                 <article class="manager-row">
+
 
                     <div class="manager-number">
                         02
                     </div>
+
 
                     <div class="manager-info">
 
@@ -518,18 +655,25 @@
 
                     </div>
 
+
                     <div class="manager-status assigned">
                         ASSIGNED
                     </div>
 
+
                 </article>
 
 
+
+                <!-- PLANNING -->
+
                 <article class="manager-row">
+
 
                     <div class="manager-number">
                         03
                     </div>
+
 
                     <div class="manager-info">
 
@@ -543,18 +687,25 @@
 
                     </div>
 
+
                     <div class="manager-status assigned">
                         ASSIGNED
                     </div>
 
+
                 </article>
 
 
+
+                <!-- SECURITY -->
+
                 <article class="manager-row vacant">
+
 
                     <div class="manager-number">
                         04
                     </div>
+
 
                     <div class="manager-info">
 
@@ -568,18 +719,25 @@
 
                     </div>
 
+
                     <div class="manager-status vacant-status">
                         VACANT
                     </div>
 
+
                 </article>
 
 
+
+                <!-- DEVELOPMENT -->
+
                 <article class="manager-row">
+
 
                     <div class="manager-number">
                         05
                     </div>
+
 
                     <div class="manager-info">
 
@@ -593,48 +751,70 @@
 
                     </div>
 
+
                     <div class="manager-status assigned">
                         ASSIGNED
                     </div>
 
+
                 </article>
 
+
             </div>
+
 
         </section>
 
 
-        <!-- SPECIAL -->
+
+        <!-- =====================================
+             03. SPECIAL
+        ====================================== -->
 
         <section class="organization-section">
 
+
             <div class="organization-heading">
 
-                <div>
+
+                <div class="organization-heading-left">
+
+
                     <span class="organization-number">
                         03
                     </span>
 
+
                     <div>
+
                         <div class="organization-label">
                             SPECIAL
                         </div>
 
+
                         <h2>
                             특수
                         </h2>
+
                     </div>
+
+
                 </div>
+
 
                 <span class="organization-count">
                     02 POSITIONS
                 </span>
 
+
             </div>
+
 
 
             <div class="special-grid">
 
+
+                <!-- FOUNDER -->
 
                 <article class="special-card">
 
@@ -642,13 +822,16 @@
                         FOUNDER
                     </span>
 
+
                     <h3>
                         창업자
                     </h3>
 
+
                     <p>
                         Founder
                     </p>
+
 
                     <div class="special-status">
                         ACTIVE
@@ -656,6 +839,9 @@
 
                 </article>
 
+
+
+                <!-- CO-FOUNDER -->
 
                 <article class="special-card">
 
@@ -663,13 +849,16 @@
                         CO-FOUNDER
                     </span>
 
+
                     <h3>
                         공동창업자
                     </h3>
 
+
                     <p>
                         Co-Founder
                     </p>
+
 
                     <div class="special-status">
                         ACTIVE
@@ -677,26 +866,34 @@
 
                 </article>
 
+
             </div>
 
+
         </section>
+
 
 
         <!-- FOOTER -->
 
         <footer class="internal-footer">
 
+
             <div>
                 G4 INTERACTIVE
             </div>
+
 
             <span>
                 C-LEVEL INTERNAL AREA
             </span>
 
+
         </footer>
 
+
     </main>
+
 
 
     <script src="../js/main.js"></script>
