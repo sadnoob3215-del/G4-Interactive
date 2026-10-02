@@ -30,7 +30,7 @@ const logoutButton = document.getElementById("logoutButton");
     G4CLEVEL
 */
 
-const C_LEVEL_PASSWORD = "G4CLEVEL";
+const C_LEVEL_PASSWORD = "G40515-SN3215";
 
 
 /* =========================
