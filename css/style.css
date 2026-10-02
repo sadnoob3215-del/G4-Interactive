@@ -150,12 +150,9 @@ input {
 
 
 .hero-title {
-    font-size: clamp(55px, 8vw, 110px);
-
+    font-size: clamp(48px, 6vw, 78px);
     line-height: 0.98;
-
-    letter-spacing: -5px;
-
+    letter-spacing: -4px;
     margin-bottom: 38px;
 }
 
@@ -1233,9 +1230,9 @@ footer {
 
 
     .hero-title {
-        font-size: 56px;
+        font-size: 48px;
 
-        letter-spacing: -3px;
+        letter-spacing: -1.5px;
     }
 
 
