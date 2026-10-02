@@ -1,53 +1,43 @@
-/* =========================
+/* ==================================================
    G4 INTERACTIVE
    MAIN JAVASCRIPT
-========================= */
+================================================== */
 
 
-/* =========================
-   C-LEVEL ACCESS
-========================= */
+/* ==================================================
+   C-LEVEL
+================================================== */
 
-const accessForm =
-    document.getElementById("accessForm");
+const accessForm = document.getElementById("accessForm");
 
-const accessScreen =
-    document.getElementById("accessScreen");
+const accessScreen = document.getElementById("accessScreen");
 
-const internalScreen =
-    document.getElementById("internalScreen");
+const internalScreen = document.getElementById("internalScreen");
 
-const accessError =
-    document.getElementById("accessError");
+const accessError = document.getElementById("accessError");
 
-const passwordInput =
-    document.getElementById("password");
+const passwordInput = document.getElementById("password");
 
-const togglePassword =
-    document.getElementById("togglePassword");
+const togglePassword = document.getElementById("togglePassword");
 
-const logoutButton =
-    document.getElementById("logoutButton");
+const logoutButton = document.getElementById("logoutButton");
 
 
 /*
-    테스트용 비밀번호
+    C-Level Access Password
 
-    GitHub Pages의 프론트엔드 인증이므로
-    실제 보안용 비밀번호로 사용하지 마세요.
+    현재 비밀번호:
+    G4CLEVEL
 */
 
 const C_LEVEL_PASSWORD = "G4CLEVEL";
 
 
 /* =========================
-   SESSION CHECK
+   CHECK LOGIN
 ========================= */
 
-if (
-    accessScreen &&
-    internalScreen
-) {
+if (accessScreen && internalScreen) {
 
     const authenticated =
         sessionStorage.getItem(
@@ -77,14 +67,16 @@ if (accessForm) {
             event.preventDefault();
 
 
+            if (!passwordInput) {
+                return;
+            }
+
+
             const password =
                 passwordInput.value;
 
 
-            if (
-                password ===
-                C_LEVEL_PASSWORD
-            ) {
+            if (password === C_LEVEL_PASSWORD) {
 
                 sessionStorage.setItem(
                     "g4_clevel_authenticated",
@@ -94,8 +86,9 @@ if (accessForm) {
 
                 showInternalScreen();
 
+            }
 
-            } else {
+            else {
 
                 showAccessError();
 
@@ -131,7 +124,7 @@ function showInternalScreen() {
 
 
 /* =========================
-   ERROR
+   LOGIN ERROR
 ========================= */
 
 function showAccessError() {
@@ -170,7 +163,7 @@ function showAccessError() {
 
 
 /* =========================
-   PASSWORD VISIBILITY
+   PASSWORD SHOW / HIDE
 ========================= */
 
 if (togglePassword) {
@@ -178,6 +171,11 @@ if (togglePassword) {
     togglePassword.addEventListener(
         "click",
         function () {
+
+            if (!passwordInput) {
+                return;
+            }
+
 
             if (
                 passwordInput.type ===
@@ -187,13 +185,17 @@ if (togglePassword) {
                 passwordInput.type =
                     "text";
 
+
                 togglePassword.textContent =
                     "HIDE";
 
-            } else {
+            }
+
+            else {
 
                 passwordInput.type =
                     "password";
+
 
                 togglePassword.textContent =
                     "SHOW";
@@ -262,9 +264,9 @@ if (logoutButton) {
 }
 
 
-/* =========================
-   SMOOTH ANCHOR SCROLL
-========================= */
+/* ==================================================
+   SMOOTH SCROLL
+================================================== */
 
 document
     .querySelectorAll(
@@ -284,9 +286,12 @@ document
 
 
                     if (
+                        !targetId ||
                         targetId === "#"
                     ) {
+
                         return;
+
                     }
 
 
@@ -301,9 +306,11 @@ document
                         event.preventDefault();
 
 
-                        target.scrollIntoView({
-                            behavior: "smooth"
-                        });
+                        target.scrollIntoView(
+                            {
+                                behavior: "smooth"
+                            }
+                        );
 
                     }
 
