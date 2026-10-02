@@ -1,196 +1,204 @@
-"use strict";
+/* =========================
+   G4 INTERACTIVE
+   MAIN JAVASCRIPT
+========================= */
 
 
-/* =========================================
-   ELEMENTS
-========================================= */
+/* =========================
+   C-LEVEL ACCESS
+========================= */
 
-const navigation =
-    document.getElementById("navigation");
+const accessForm =
+    document.getElementById("accessForm");
 
-const menuButton =
-    document.getElementById("menuButton");
+const accessScreen =
+    document.getElementById("accessScreen");
 
-const backToTop =
-    document.getElementById("backToTop");
+const internalScreen =
+    document.getElementById("internalScreen");
 
-const currentYear =
-    document.getElementById("currentYear");
+const accessError =
+    document.getElementById("accessError");
 
-const navigationLinks =
-    document.querySelectorAll(
-        ".navigation a"
-    );
+const passwordInput =
+    document.getElementById("password");
 
+const togglePassword =
+    document.getElementById("togglePassword");
 
-/* =========================================
-   CURRENT YEAR
-========================================= */
-
-if (currentYear) {
-
-    currentYear.textContent =
-        new Date().getFullYear();
-
-}
+const logoutButton =
+    document.getElementById("logoutButton");
 
 
-/* =========================================
-   MOBILE MENU
-========================================= */
+/*
+    테스트용 비밀번호
 
-function closeMenu() {
+    GitHub Pages의 프론트엔드 인증이므로
+    실제 보안용 비밀번호로 사용하지 마세요.
+*/
 
-    if (!navigation || !menuButton) {
-        return;
+const C_LEVEL_PASSWORD = "G4CLEVEL";
+
+
+/* =========================
+   SESSION CHECK
+========================= */
+
+if (
+    accessScreen &&
+    internalScreen
+) {
+
+    const authenticated =
+        sessionStorage.getItem(
+            "g4_clevel_authenticated"
+        );
+
+
+    if (authenticated === "true") {
+
+        showInternalScreen();
+
     }
 
-    navigation.classList.remove("open");
-
-    menuButton.classList.remove("open");
-
-    menuButton.setAttribute(
-        "aria-expanded",
-        "false"
-    );
-
-    menuButton.setAttribute(
-        "aria-label",
-        "메뉴 열기"
-    );
 }
 
 
-function openMenu() {
+/* =========================
+   LOGIN
+========================= */
 
-    if (!navigation || !menuButton) {
-        return;
-    }
+if (accessForm) {
 
-    navigation.classList.add("open");
+    accessForm.addEventListener(
+        "submit",
+        function (event) {
 
-    menuButton.classList.add("open");
-
-    menuButton.setAttribute(
-        "aria-expanded",
-        "true"
-    );
-
-    menuButton.setAttribute(
-        "aria-label",
-        "메뉴 닫기"
-    );
-}
+            event.preventDefault();
 
 
-if (menuButton) {
+            const password =
+                passwordInput.value;
 
-    menuButton.addEventListener(
-        "click",
-        () => {
 
-            const isOpen =
-                navigation.classList.contains(
-                    "open"
+            if (
+                password ===
+                C_LEVEL_PASSWORD
+            ) {
+
+                sessionStorage.setItem(
+                    "g4_clevel_authenticated",
+                    "true"
                 );
 
-            if (isOpen) {
-                closeMenu();
+
+                showInternalScreen();
+
+
             } else {
-                openMenu();
+
+                showAccessError();
+
             }
 
         }
     );
+
 }
 
 
-/* =========================================
-   NAVIGATION LINKS
-========================================= */
+/* =========================
+   SHOW INTERNAL
+========================= */
 
-navigationLinks.forEach(
-    (link) => {
+function showInternalScreen() {
 
-        link.addEventListener(
-            "click",
-            () => {
-
-                closeMenu();
-
-            }
-        );
-
-    }
-);
-
-
-/* =========================================
-   ESC KEY
-========================================= */
-
-document.addEventListener(
-    "keydown",
-    (event) => {
-
-        if (event.key === "Escape") {
-
-            closeMenu();
-
-        }
-
-    }
-);
-
-
-/* =========================================
-   BACK TO TOP
-========================================= */
-
-function updateBackToTop() {
-
-    if (!backToTop) {
+    if (!accessScreen || !internalScreen) {
         return;
     }
 
-    if (window.scrollY > 500) {
 
-        backToTop.classList.add(
-            "show"
-        );
+    accessScreen.classList.add(
+        "hidden"
+    );
 
-    } else {
 
-        backToTop.classList.remove(
-            "show"
-        );
+    internalScreen.classList.remove(
+        "hidden"
+    );
 
-    }
 }
 
 
-window.addEventListener(
-    "scroll",
-    updateBackToTop,
-    {
-        passive: true
+/* =========================
+   ERROR
+========================= */
+
+function showAccessError() {
+
+    if (!accessError) {
+        return;
     }
-);
 
 
-if (backToTop) {
+    accessError.classList.add(
+        "show"
+    );
 
-    backToTop.addEventListener(
+
+    if (passwordInput) {
+
+        passwordInput.value = "";
+
+        passwordInput.focus();
+
+    }
+
+
+    setTimeout(
+        function () {
+
+            accessError.classList.remove(
+                "show"
+            );
+
+        },
+        2500
+    );
+
+}
+
+
+/* =========================
+   PASSWORD VISIBILITY
+========================= */
+
+if (togglePassword) {
+
+    togglePassword.addEventListener(
         "click",
-        () => {
+        function () {
 
-            window.scrollTo({
+            if (
+                passwordInput.type ===
+                "password"
+            ) {
 
-                top: 0,
+                passwordInput.type =
+                    "text";
 
-                behavior: "smooth"
+                togglePassword.textContent =
+                    "HIDE";
 
-            });
+            } else {
+
+                passwordInput.type =
+                    "password";
+
+                togglePassword.textContent =
+                    "SHOW";
+
+            }
 
         }
     );
@@ -198,19 +206,109 @@ if (backToTop) {
 }
 
 
-/* =========================================
-   RESIZE
-========================================= */
+/* =========================
+   LOGOUT
+========================= */
 
-window.addEventListener(
-    "resize",
-    () => {
+if (logoutButton) {
 
-        if (window.innerWidth > 700) {
+    logoutButton.addEventListener(
+        "click",
+        function () {
 
-            closeMenu();
+            sessionStorage.removeItem(
+                "g4_clevel_authenticated"
+            );
+
+
+            if (internalScreen) {
+
+                internalScreen.classList.add(
+                    "hidden"
+                );
+
+            }
+
+
+            if (accessScreen) {
+
+                accessScreen.classList.remove(
+                    "hidden"
+                );
+
+            }
+
+
+            if (passwordInput) {
+
+                passwordInput.value = "";
+
+                passwordInput.type =
+                    "password";
+
+            }
+
+
+            if (togglePassword) {
+
+                togglePassword.textContent =
+                    "SHOW";
+
+            }
 
         }
+    );
 
-    }
-);
+}
+
+
+/* =========================
+   SMOOTH ANCHOR SCROLL
+========================= */
+
+document
+    .querySelectorAll(
+        'a[href^="#"]'
+    )
+    .forEach(
+        function (link) {
+
+            link.addEventListener(
+                "click",
+                function (event) {
+
+                    const targetId =
+                        this.getAttribute(
+                            "href"
+                        );
+
+
+                    if (
+                        targetId === "#"
+                    ) {
+                        return;
+                    }
+
+
+                    const target =
+                        document.querySelector(
+                            targetId
+                        );
+
+
+                    if (target) {
+
+                        event.preventDefault();
+
+
+                        target.scrollIntoView({
+                            behavior: "smooth"
+                        });
+
+                    }
+
+                }
+            );
+
+        }
+    );
