@@ -2,7 +2,6 @@
 <html lang="ko">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta
@@ -27,19 +26,15 @@
         rel="stylesheet"
         href="../css/style.css"
     >
-
 </head>
 
 
 <body class="clevel-page">
 
-
     <!-- BACKGROUND -->
 
     <div class="clevel-background">
-
         <div class="clevel-glow"></div>
-
     </div>
 
 
@@ -64,22 +59,17 @@
                 G4 INTERACTIVE
             </div>
 
-
             <div class="access-label">
-                C-LEVEL AREA
+                C-LEVEL INTERNAL
             </div>
-
 
             <h1>
                 Restricted Access
             </h1>
 
-
             <p class="access-description">
-
-                이 영역은 G4 Interactive C-Level
-                구성원만 접근할 수 있습니다.
-
+                G4 Interactive의 내부 편제 및 운영 정보를 확인하려면
+                인증이 필요합니다.
             </p>
 
 
@@ -88,7 +78,6 @@
                 <label for="password">
                     ACCESS PASSWORD
                 </label>
-
 
                 <div class="password-wrapper">
 
@@ -99,7 +88,6 @@
                         autocomplete="off"
                         required
                     >
-
 
                     <button
                         type="button"
@@ -131,11 +119,8 @@
 
 
             <div class="access-status">
-
                 <span class="status-dot"></span>
-
                 SYSTEM ONLINE
-
             </div>
 
         </section>
@@ -143,17 +128,18 @@
     </main>
 
 
-    <!-- C-LEVEL INTERNAL PAGE -->
+    <!-- INTERNAL C-LEVEL -->
 
     <main
         class="internal-container hidden"
         id="internalScreen"
     >
 
+        <!-- HEADER -->
+
         <header class="internal-header">
 
             <div>
-
                 <div class="internal-label">
                     G4 INTERACTIVE
                 </div>
@@ -162,6 +148,9 @@
                     C-Level
                 </h1>
 
+                <p class="internal-subtitle">
+                    Executive Organization & Internal Structure
+                </p>
             </div>
 
 
@@ -175,132 +164,276 @@
         </header>
 
 
+        <!-- STATUS -->
+
         <section class="internal-welcome">
 
-            <span>
+            <div class="authenticated-status">
+                <span class="status-dot"></span>
                 AUTHENTICATED
-            </span>
+            </div>
 
             <h2>
-                C-Level Internal Area
+                G4 Interactive 편제
             </h2>
 
             <p>
-                G4 Interactive의 C-Level 전용 영역입니다.
+                G4 Interactive의 최고운영진, 부서장 및 특수 직책을
+                관리하는 내부 편제입니다.
             </p>
 
         </section>
 
 
-        <!-- ORGANIZATION -->
+        <!-- EXECUTIVE TEAM -->
 
-        <section class="internal-section">
+        <section class="organization-section">
 
-            <div class="internal-section-label">
-                EXECUTIVE MANAGEMENT
+            <div class="organization-heading">
+
+                <div>
+                    <span class="organization-number">
+                        01
+                    </span>
+
+                    <div>
+                        <div class="organization-label">
+                            EXECUTIVE TEAM
+                        </div>
+
+                        <h2>
+                            최고운영진
+                        </h2>
+                    </div>
+                </div>
+
+                <span class="organization-count">
+                    06 POSITIONS
+                </span>
+
             </div>
 
 
             <div class="executive-grid">
 
 
-                <article class="executive-card">
+                <!-- CEO -->
 
-                    <span class="executive-role">
-                        REPRESENTATIVE
-                    </span>
+                <article class="executive-card executive-primary">
+
+                    <div class="executive-top">
+
+                        <span class="executive-role">
+                            CEO
+                        </span>
+
+                        <span class="member-status assigned">
+                            ASSIGNED
+                        </span>
+
+                    </div>
 
                     <h3>
                         대표
                     </h3>
 
-                    <p>
-                        G4 Interactive Representative
-                    </p>
-
-                </article>
-
-
-                <article class="executive-card">
-
-                    <span class="executive-role">
-                        CEO
-                    </span>
-
-                    <h3>
+                    <p class="executive-title">
                         Chief Executive Officer
-                    </h3>
+                    </p>
 
-                    <p>
-                        최고경영책임자
+                    <div class="member-line"></div>
+
+                    <p class="member-label">
+                        MEMBER
+                    </p>
+
+                    <p class="member-value">
+                        배정됨
                     </p>
 
                 </article>
 
 
+                <!-- COO -->
+
                 <article class="executive-card">
 
-                    <span class="executive-role">
-                        COO
-                    </span>
+                    <div class="executive-top">
+
+                        <span class="executive-role">
+                            COO
+                        </span>
+
+                        <span class="member-status assigned">
+                            ASSIGNED
+                        </span>
+
+                    </div>
 
                     <h3>
-                        Chief Operating Officer
-                    </h3>
-
-                    <p>
                         최고운영책임자
+                    </h3>
+
+                    <p class="executive-title">
+                        Chief Operating Officer
+                    </p>
+
+                    <div class="member-line"></div>
+
+                    <p class="member-label">
+                        MEMBER
+                    </p>
+
+                    <p class="member-value">
+                        배정됨
                     </p>
 
                 </article>
 
 
+                <!-- CTO -->
+
                 <article class="executive-card">
 
-                    <span class="executive-role">
-                        CTO
-                    </span>
+                    <div class="executive-top">
+
+                        <span class="executive-role">
+                            CTO
+                        </span>
+
+                        <span class="member-status assigned">
+                            ASSIGNED
+                        </span>
+
+                    </div>
 
                     <h3>
-                        Chief Technology Officer
-                    </h3>
-
-                    <p>
                         최고기술책임자
+                    </h3>
+
+                    <p class="executive-title">
+                        Chief Technology Officer
+                    </p>
+
+                    <div class="member-line"></div>
+
+                    <p class="member-label">
+                        MEMBER
+                    </p>
+
+                    <p class="member-value">
+                        배정됨
                     </p>
 
                 </article>
 
 
-                <article class="executive-card">
-
-                    <span class="executive-role">
-                        CPO
-                    </span>
-
-                    <h3>
-                        Chief Product Officer
-                    </h3>
-
-                    <p>
-                        최고제품책임자
-                    </p>
-
-                </article>
-
+                <!-- CSO -->
 
                 <article class="executive-card">
 
-                    <span class="executive-role">
-                        CSO
-                    </span>
+                    <div class="executive-top">
+
+                        <span class="executive-role">
+                            CSO
+                        </span>
+
+                        <span class="member-status assigned">
+                            ASSIGNED
+                        </span>
+
+                    </div>
 
                     <h3>
-                        Chief Security Officer
-                    </h3>
-
-                    <p>
                         최고보안책임자
+                    </h3>
+
+                    <p class="executive-title">
+                        Chief Security Officer
+                    </p>
+
+                    <div class="member-line"></div>
+
+                    <p class="member-label">
+                        MEMBER
+                    </p>
+
+                    <p class="member-value">
+                        배정됨
+                    </p>
+
+                </article>
+
+
+                <!-- CPO -->
+
+                <article class="executive-card">
+
+                    <div class="executive-top">
+
+                        <span class="executive-role">
+                            CPO
+                        </span>
+
+                        <span class="member-status assigned">
+                            ASSIGNED
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        최고기획책임자
+                    </h3>
+
+                    <p class="executive-title">
+                        Chief Planning Officer
+                    </p>
+
+                    <div class="member-line"></div>
+
+                    <p class="member-label">
+                        MEMBER
+                    </p>
+
+                    <p class="member-value">
+                        배정됨
+                    </p>
+
+                </article>
+
+
+                <!-- CFO -->
+
+                <article class="executive-card">
+
+                    <div class="executive-top">
+
+                        <span class="executive-role">
+                            CFO
+                        </span>
+
+                        <span class="member-status assigned">
+                            ASSIGNED
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        최고재무책임자
+                    </h3>
+
+                    <p class="executive-title">
+                        Chief Financial Officer
+                    </p>
+
+                    <div class="member-line"></div>
+
+                    <p class="member-label">
+                        MEMBER
+                    </p>
+
+                    <p class="member-value">
+                        배정됨
                     </p>
 
                 </article>
@@ -310,48 +443,256 @@
         </section>
 
 
-        <!-- DEPARTMENTS -->
+        <!-- DEPARTMENT MANAGERS -->
 
-        <section class="internal-section">
+        <section class="organization-section">
 
-            <div class="internal-section-label">
-                DEPARTMENTS
+            <div class="organization-heading">
+
+                <div>
+                    <span class="organization-number">
+                        02
+                    </span>
+
+                    <div>
+                        <div class="organization-label">
+                            DEPARTMENT MANAGER
+                        </div>
+
+                        <h2>
+                            부서장
+                        </h2>
+                    </div>
+                </div>
+
+                <span class="organization-count">
+                    05 POSITIONS
+                </span>
+
             </div>
 
 
-            <div class="department-list">
-
-                <div class="department">
-                    <span>01</span>
-                    Development
-                </div>
+            <div class="manager-list">
 
 
-                <div class="department">
-                    <span>02</span>
-                    Security
-                </div>
+                <article class="manager-row">
+
+                    <div class="manager-number">
+                        01
+                    </div>
+
+                    <div class="manager-info">
+
+                        <h3>
+                            서버 관리과장
+                        </h3>
+
+                        <p>
+                            Server Management Department Manager
+                        </p>
+
+                    </div>
+
+                    <div class="manager-status assigned">
+                        ASSIGNED
+                    </div>
+
+                </article>
 
 
-                <div class="department">
-                    <span>03</span>
-                    Management
-                </div>
+                <article class="manager-row">
+
+                    <div class="manager-number">
+                        02
+                    </div>
+
+                    <div class="manager-info">
+
+                        <h3>
+                            운영과장
+                        </h3>
+
+                        <p>
+                            Operations Department Manager
+                        </p>
+
+                    </div>
+
+                    <div class="manager-status assigned">
+                        ASSIGNED
+                    </div>
+
+                </article>
 
 
-                <div class="department">
-                    <span>04</span>
-                    Design
-                </div>
+                <article class="manager-row">
+
+                    <div class="manager-number">
+                        03
+                    </div>
+
+                    <div class="manager-info">
+
+                        <h3>
+                            기획과장
+                        </h3>
+
+                        <p>
+                            Planning Department Manager
+                        </p>
+
+                    </div>
+
+                    <div class="manager-status assigned">
+                        ASSIGNED
+                    </div>
+
+                </article>
+
+
+                <article class="manager-row vacant">
+
+                    <div class="manager-number">
+                        04
+                    </div>
+
+                    <div class="manager-info">
+
+                        <h3>
+                            보안과장
+                        </h3>
+
+                        <p>
+                            Security Department Manager
+                        </p>
+
+                    </div>
+
+                    <div class="manager-status vacant-status">
+                        VACANT
+                    </div>
+
+                </article>
+
+
+                <article class="manager-row">
+
+                    <div class="manager-number">
+                        05
+                    </div>
+
+                    <div class="manager-info">
+
+                        <h3>
+                            개발과장
+                        </h3>
+
+                        <p>
+                            Development Department Manager
+                        </p>
+
+                    </div>
+
+                    <div class="manager-status assigned">
+                        ASSIGNED
+                    </div>
+
+                </article>
 
             </div>
 
         </section>
 
+
+        <!-- SPECIAL -->
+
+        <section class="organization-section">
+
+            <div class="organization-heading">
+
+                <div>
+                    <span class="organization-number">
+                        03
+                    </span>
+
+                    <div>
+                        <div class="organization-label">
+                            SPECIAL
+                        </div>
+
+                        <h2>
+                            특수
+                        </h2>
+                    </div>
+                </div>
+
+                <span class="organization-count">
+                    02 POSITIONS
+                </span>
+
+            </div>
+
+
+            <div class="special-grid">
+
+
+                <article class="special-card">
+
+                    <span class="special-role">
+                        FOUNDER
+                    </span>
+
+                    <h3>
+                        창업자
+                    </h3>
+
+                    <p>
+                        Founder
+                    </p>
+
+                    <div class="special-status">
+                        ACTIVE
+                    </div>
+
+                </article>
+
+
+                <article class="special-card">
+
+                    <span class="special-role">
+                        CO-FOUNDER
+                    </span>
+
+                    <h3>
+                        공동창업자
+                    </h3>
+
+                    <p>
+                        Co-Founder
+                    </p>
+
+                    <div class="special-status">
+                        ACTIVE
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
 
         <footer class="internal-footer">
 
-            G4 INTERACTIVE · C-LEVEL INTERNAL AREA
+            <div>
+                G4 INTERACTIVE
+            </div>
+
+            <span>
+                C-LEVEL INTERNAL AREA
+            </span>
 
         </footer>
 
