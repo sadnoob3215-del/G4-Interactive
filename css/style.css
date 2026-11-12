@@ -195,7 +195,7 @@ input {
 
 .button-primary {
     background: #d1d5db;
-    color: #fff;
+    color: #000;
 }
 
 .button-primary:hover {
