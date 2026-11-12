@@ -194,12 +194,12 @@ input {
 }
 
 .button-primary {
-    background: #f0f1f3;
+    background: #d1d5db;
     color: #fff;
 }
 
 .button-primary:hover {
-    background: #d1d5db;
+    background: #9ca3af;
 }
 
 .button-secondary {
@@ -219,7 +219,7 @@ input {
 
     border-radius: 50%;
 
-    background: rgba(209, 213, 219, 0.045);
+    background: rgba(209, 213, 219, 0.08);
 
     filter: blur(100px);
 
@@ -371,7 +371,7 @@ section:not(.hero) {
 
     border: 1px solid rgba(209, 213, 219, 0.3);
 
-    background: rgba(209, 213, 219, 0.05);
+    background: rgba(209, 213, 219, 0.07);
 
     color: #d1d5db;
 
@@ -621,7 +621,7 @@ footer {
 
     border-radius: 50%;
 
-    background: rgba(209, 213, 219, 0.045);
+    background: rgba(209, 213, 219, 0.08);
 
     filter: blur(100px);
 }
@@ -787,7 +787,7 @@ footer {
 
     border: none;
 
-    background: #f0f1f3;
+    background: #d1d5db;
 
     color: #fff;
 
@@ -802,7 +802,7 @@ footer {
 }
 
 .access-button:hover {
-    background: #d1d5db;
+    background: #9ca3af;
 }
 
 .access-status {
