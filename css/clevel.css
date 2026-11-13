@@ -1,95 +1,551 @@
 /* ==================================================
-   G4 INTERACTIVE
-   C-LEVEL
+   G4 INTERACTIVE - C-LEVEL INTERNAL PAGE
+   Dark / Gray theme
 ================================================== */
 
-
-/* =========================
-   PAGE
-========================= */
+* {
+    box-sizing: border-box;
+}
 
 .clevel-page {
     min-height: 100vh;
-
+    margin: 0;
     background: #08090c;
-
     color: #f0f1f3;
+    font-family: Arial, "Noto Sans KR", sans-serif;
 }
-
-
-/* =========================
-   BACKGROUND
-========================= */
 
 .clevel-background {
     position: fixed;
-
     inset: 0;
-
     z-index: 0;
-
     overflow: hidden;
-
     pointer-events: none;
 }
 
 .clevel-glow {
     position: absolute;
-
     top: 0;
     right: -180px;
-
     width: 600px;
     height: 600px;
-
     border-radius: 50%;
-
     background: rgba(209, 213, 219, 0.07);
-
     filter: blur(120px);
 }
 
-
-/* =========================
-   ACCESS
-========================= */
-
-.clevel-container {
+.clevel-container,
+.internal-container {
     position: relative;
-
     z-index: 2;
-
     width: min(1000px, calc(100% - 40px));
-
     margin: 0 auto;
+    padding: 70px 0 80px;
+}
 
-    padding: 110px 0 80px;
+.hidden {
+    display: none !important;
 }
 
 .clevel-back {
     display: inline-block;
-
     margin-bottom: 35px;
-
-    color: #8d9098;
-
+    color: #a1a1aa;
     font-size: 13px;
-
+    text-decoration: none;
     transition: color 0.2s ease;
 }
 
 .clevel-back:hover {
-    color: #d1d5db;
+    color: #ffffff;
 }
 
-
-/* =========================
-   ACCESS CARD
-========================= */
-
+/* ACCESS SCREEN */
 .access-card {
     width: min(520px, 100%);
-
-    margin: 70px auto 0;
-
+    margin: 40px auto 0;
     padding: 45px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 18px;
+    background: rgba(17,18,22,0.94);
+    box-shadow: 0 24px 80px rgba(0,0,0,0.35);
+}
+
+.access-brand,
+.internal-label {
+    color: #e5e7eb;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.access-label {
+    margin-top: 28px;
+    color: #8d9098;
+    font-size: 10px;
+    letter-spacing: 1.8px;
+}
+
+.access-card h1 {
+    margin: 12px 0;
+    font-size: 30px;
+    color: #f8fafc;
+}
+
+.access-description {
+    color: #a1a1aa;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+#accessForm {
+    margin-top: 30px;
+}
+
+#accessForm label {
+    display: block;
+    margin-bottom: 10px;
+    color: #d4d4d8;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.password-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.password-wrapper input {
+    min-width: 0;
+    flex: 1;
+    padding: 14px;
+    border: 1px solid #35363d;
+    border-radius: 8px;
+    outline: none;
+    background: #090a0d;
+    color: #f4f4f5;
+}
+
+.password-wrapper input:focus {
+    border-color: #a1a1aa;
+}
+
+.password-wrapper button {
+    padding: 13px;
+    border: 1px solid #45464d;
+    border-radius: 8px;
+    background: #202127;
+    color: #e5e7eb;
+    cursor: pointer;
+}
+
+.access-error {
+    display: none;
+    color: #f87171;
+    font-size: 12px;
+}
+
+.access-button {
+    width: 100%;
+    margin-top: 14px;
+    padding: 14px;
+    border: 0;
+    border-radius: 8px;
+    background: #e5e7eb;
+    color: #000000;
+    font-weight: 800;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.access-button:hover {
+    background: #ffffff;
+}
+
+.access-status,
+.authenticated-status {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #a1a1aa;
+    font-size: 10px;
+    letter-spacing: 1.2px;
+}
+
+.access-status {
+    margin-top: 28px;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    flex: 0 0 7px;
+    border-radius: 50%;
+    background: #86b98a;
+    box-shadow: 0 0 10px rgba(134,185,138,0.45);
+}
+
+/* INTERNAL HEADER */
+.internal-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.internal-header h1 {
+    margin: 12px 0 5px;
+    color: #f8fafc;
+    font-size: clamp(32px, 5vw, 46px);
+}
+
+.internal-subtitle {
+    margin: 0;
+    color: #92949d;
+    font-size: 13px;
+}
+
+.logout-button {
+    padding: 10px 15px;
+    border: 1px solid #45464d;
+    border-radius: 7px;
+    background: #15161b;
+    color: #d4d4d8;
+    font-size: 11px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background: #24252b;
+    color: #ffffff;
+}
+
+.internal-welcome {
+    margin: 28px 0 38px;
+    padding: 24px;
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.025);
+}
+
+.internal-welcome h2 {
+    margin: 18px 0 8px;
+    color: #f4f4f5;
+    font-size: 21px;
+}
+
+.internal-welcome p {
+    margin: 0;
+    color: #a1a1aa;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* ORGANIZATION SECTION */
+.organization-section {
+    margin-top: 42px;
+}
+
+.organization-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.organization-heading-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.organization-number {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border: 1px solid #44464e;
+    border-radius: 9px;
+    background: #15161b;
+    color: #e5e7eb;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.organization-label {
+    color: #92949d;
+    font-size: 10px;
+    letter-spacing: 1.8px;
+}
+
+.organization-heading h2 {
+    margin: 5px 0 0;
+    color: #f4f4f5;
+    font-size: 20px;
+}
+
+.organization-count {
+    color: #8f929b;
+    font-size: 10px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+/* CORE EXECUTIVES */
+.executive-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.executive-card,
+.special-card {
+    min-width: 0;
+    padding: 21px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    background: linear-gradient(145deg, #15161b, #0e0f13);
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.executive-card:hover,
+.special-card:hover,
+.manager-row:hover {
+    border-color: rgba(229,231,235,0.42);
+    transform: translateY(-2px);
+}
+
+.executive-primary {
+    border-color: rgba(229,231,235,0.35);
+    background: linear-gradient(145deg, #202127, #111216);
+}
+
+.executive-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.executive-role,
+.special-role {
+    color: #d4d4d8;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.member-status,
+.manager-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 9px;
+    border-radius: 5px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.7px;
+    white-space: nowrap;
+}
+
+.assigned {
+    border: 1px solid rgba(134,185,138,0.25);
+    background: rgba(134,185,138,0.10);
+    color: #9bc99f;
+}
+
+.vacant-status,
+.manager-row.vacant .manager-status {
+    border: 1px solid rgba(239,180,120,0.25);
+    background: rgba(239,180,120,0.09);
+    color: #e7b887;
+}
+
+.executive-card h3,
+.special-card h3 {
+    margin: 20px 0 5px;
+    color: #f4f4f5;
+    font-size: 17px;
+    line-height: 1.45;
+    word-break: keep-all;
+}
+
+.executive-title,
+.special-card p {
+    margin: 0;
+    color: #92949d;
+    font-size: 11px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.member-line {
+    height: 1px;
+    margin: 18px 0 13px;
+    background: rgba(255,255,255,0.10);
+}
+
+.member-label {
+    margin: 0 0 6px;
+    color: #777a84;
+    font-size: 9px;
+    letter-spacing: 1.2px;
+}
+
+.member-value {
+    margin: 0;
+    color: #d4d4d8;
+    font-size: 12px;
+}
+
+/* DEPARTMENT MANAGERS + STAFF: EACH ITEM IS A CARD */
+.manager-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.manager-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-width: 0;
+    min-height: 105px;
+    padding: 18px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    background: linear-gradient(145deg, #15161b, #0e0f13);
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.manager-number {
+    display: grid;
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    place-items: center;
+    border: 1px solid #41434b;
+    border-radius: 8px;
+    background: #202127;
+    color: #d4d4d8;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.manager-info {
+    min-width: 0;
+    flex: 1;
+}
+
+.manager-info h3 {
+    margin: 0 0 6px;
+    color: #f4f4f5;
+    font-size: 14px;
+    line-height: 1.45;
+    word-break: keep-all;
+}
+
+.manager-info p {
+    margin: 0;
+    color: #92949d;
+    font-size: 10px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.manager-status {
+    flex: 0 0 auto;
+}
+
+/* SPECIAL POSITIONS */
+.special-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.special-card {
+    min-height: 175px;
+}
+
+.special-card h3 {
+    margin-top: 23px;
+}
+
+.special-status {
+    display: inline-flex;
+    margin-top: 18px;
+    padding: 6px 9px;
+    border: 1px solid rgba(134,185,138,0.25);
+    border-radius: 5px;
+    background: rgba(134,185,138,0.10);
+    color: #9bc99f;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* FOOTER */
+.internal-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 55px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255,255,255,0.10);
+    color: #92949d;
+    font-size: 10px;
+    letter-spacing: 1.2px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 760px) {
+    .executive-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .special-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .internal-header {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 520px) {
+    .clevel-container,
+    .internal-container {
+        width: min(100% - 28px, 1000px);
+        padding-top: 35px;
+    }
+
+    .access-card {
+        padding: 28px 22px;
+    }
+
+    .executive-grid,
+    .manager-list,
+    .special-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .organization-heading {
+        align-items: flex-start;
+    }
+
+    .manager-row {
+        gap: 11px;
+        padding: 15px;
+    }
+
+    .internal-footer {
+        flex-direction: column;
+    }
+}
